@@ -49,9 +49,9 @@ Datos Crudos (Delta Lake — 5M registros)
     └────────────────────────┬────────────────────────┘
                              ↓
               ┌──────────────────────────┐
-              │     ML MODEL (XGBoost)   │
-              │  Accuracy: 96.16%        │
-              │  F1 Score: 0.9616        │
+              │     ML MODEL
+               (LogisticRegression)      │
+              │          │
               └──────────────┬───────────┘
                              ↓
               ┌──────────────────────────┐
