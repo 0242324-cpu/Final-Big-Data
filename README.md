@@ -78,7 +78,7 @@ Datos Crudos (Delta Lake — 5M registros)
 | **Almacenamiento** | Delta Lake + Unity Catalog |
 | **Procesamiento** | Apache Spark |
 | **Catálogo** | Unity Catalog (`bigdata_final.taxis`) |
-| **Machine Learning** | scikit-learn, XGBoost |
+| **Machine Learning** | scikit-learn, LogisticRegression |
 | **Tracking ML** | MLflow (experiments + model registry) |
 | **API** | Databricks Serving Endpoints (REST) |
 | **Lenguaje** | Python 3.12 |
