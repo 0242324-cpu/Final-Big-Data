@@ -198,7 +198,7 @@ Clasificar cada viaje en uno de tres rangos de tarifa (fare per mile):
 ### Modelo: LogisticRegression
 
 ```python
-XGBClassifier(
+LogisticRegressionClassifier(
     n_estimators     = 200,
     learning_rate    = 0.1,
     max_depth        = 6,
