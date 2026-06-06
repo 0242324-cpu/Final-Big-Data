@@ -195,7 +195,7 @@ Clasificar cada viaje en uno de tres rangos de tarifa (fare per mile):
 
 > Los rangos están calculados con percentiles (P1–P99) para excluir outliers extremos.
 
-### Modelo: XGBoost Classifier
+### Modelo: LogisticRegression
 
 ```python
 XGBClassifier(
@@ -223,25 +223,9 @@ XGBClassifier(
 
 ### Métricas finales
 
-| Métrica | TRAIN | TEST |
-|---------|-------|------|
-| **Accuracy** | — | **96.16%** |
-| **F1 Score** | — | **0.9616** |
-| Precision | — | 0.96 |
-| Recall | — | 0.96 |
-
-| Clase | Precision | Recall | F1 | Soporte |
-|-------|-----------|--------|----|---------|
-| Low (0) | 0.95 | 0.98 | 0.96 | 330,564 |
-| Mid (1) | 0.95 | 0.93 | 0.94 | 334,456 |
-| High (2) | 0.98 | 0.97 | 0.98 | 325,895 |
-
-### Evolución del modelo
-
 | Versión | Modelo | Accuracy | F1 |
 |---------|--------|----------|----|
 | v1 | Logistic Regression | 53.15% | 0.4890 |
-| v2 (actual) | **XGBoost** | **96.16%** | **0.9616** |
 
 ---
 
@@ -317,17 +301,9 @@ print(response.json()["predictions"][0])
 
 ---
 
-## 📸 Screenshots
-
-### Serving Endpoint activo en Databricks
-> _[Agregar screenshot del endpoint con status "Ready"]_
-
 ### Request y Response en Postman
 ![Postman Response](screenshots/postman_response.png)
 > Status: 200 OK — Response: `"Tarifa Alta ($4.76 - $15.71)"`
-
-### Métricas del modelo en MLflow
-> _[Agregar screenshot de MLflow Experiments mostrando accuracy 96.16%]_
 
 ### Rangos de tarifa
 ```
@@ -411,38 +387,16 @@ curl -X POST \
 | Tablas Gold creadas | 7 |
 | Features del modelo | 7 |
 | Clases de predicción | 3 (Low / Mid / High) |
-| Accuracy del modelo | **96.16%** |
-| F1 Score | **0.9616** |
+| Accuracy del modelo | **53.15%** |
+| F1 Score | **0.49** |
 | Costo total | **$0** (Databricks Free Edition) |
 
 ---
 
-## 🚀 Posibles Mejoras Futuras
 
-- [ ] Dashboard en Databricks SQL Analytics con las GOLD tables
-- [ ] Demand Forecasting con modelos ARIMA/Prophet
-- [ ] Geospatial analysis con H3 hexagonal binning (Kepler.gl)
-- [ ] Detección de anomalías / fraude con K-Means
-- [ ] Streaming en tiempo real con Spark Structured Streaming + Kafka
-- [ ] Monitoreo de data drift en producción
-- [ ] Customer Segmentation con RFM Analysis
 
----
 
-## 📚 Referencias
 
-- [Databricks Documentation](https://docs.databricks.com/)
-- [Delta Lake Documentation](https://docs.delta.io/)
-- [MLflow Documentation](https://mlflow.org/docs/latest/)
-- [XGBoost Documentation](https://xgboost.readthedocs.io/)
-- [NYC Taxi Dataset](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page)
-- [Medallion Architecture — Databricks](https://www.databricks.com/glossary/medallion-architecture)
-
----
-
-## 📄 Licencia
-
-Este proyecto fue desarrollado con fines académicos para la Universidad Panamericana.
 
 ---
 
